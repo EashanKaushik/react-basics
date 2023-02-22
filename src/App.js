@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.css';
+import { User } from './User.js'
+import { Text } from './Text.js'
+import { Visible } from "./Visible.js"
 
 function App() {
+  const message = "Hello World! from"
+  const name = <p>Eashan</p>;
+
+  const userData = [
+    { name: "Eashan", age: 16, sex: "M", langauge: ["py", "Ml", "na"] },
+    { name: "Srijan", age: 22, sex: "F", langauge: ["se", "gr"] },
+    { name: "Rishab", age: 20, sex: "F", langauge: [] },]
+
+  const user = (
+    <div>
+      {message}{name}
+    </div>);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      {user}
+      {
+        userData.map((key, value) => {
+          return <User key={value} name={key.name} age={key.age} sex={key.sex} langauge={key.langauge} showButton={true} />
+        })
+      }
+      <Text />
+      <Visible />
     </div>
-  );
+  )
 }
 
 export default App;
