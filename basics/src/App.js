@@ -2,6 +2,7 @@ import styles from './App.module.css';
 import { User } from './User.js'
 import { Text } from './Text.js'
 import { Visible } from "./Visible.js"
+import { Calculator } from "./Calculator.js"
 
 function App() {
   const message = "Hello World! from"
@@ -27,6 +28,7 @@ function App() {
       }
       <Text />
       <Visible />
+      <Calculator calcValue={5} />
     </div>
   )
 }
