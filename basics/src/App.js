@@ -1,36 +1,32 @@
-import styles from './App.module.css';
-import { User } from './User.js'
-import { Text } from './Text.js'
-import { Visible } from "./Visible.js"
-import { Calculator } from "./Calculator.js"
+import './App.css';
 
 function App() {
-  const message = "Hello World! from"
-  const name = <p>Eashan</p>;
+  return (
+    <div className="App">
+      <User age={23} email="@gmail.com" />
+      <User age={21} email="@nyu.edu" />
+      <User />
+    </div>
+  );
+}
 
-  const userData = [
-    { name: "Eashan", age: 16, sex: "M", langauge: ["py", "Ml", "na"] },
-    { name: "Srijan", age: 22, sex: "F", langauge: ["se", "gr"] },
-    { name: "Rishab", age: 20, sex: "F", langauge: [] },]
+const User = (props) => {
+  const name = "eashan";
+  const head = <h1>{name}</h1>;
+  const age = <h2>{props.age}</h2>;
+  const email = <h2>{props.email}</h2>;
+  const subject = <h2>mysubject</h2>;
 
   const user = (
     <div>
-      {message}{name}
-    </div>);
-
-  return (
-    <div className={styles.App}>
-      {user}
-      {
-        userData.map((key, value) => {
-          return <User key={value} name={key.name} age={key.age} sex={key.sex} langauge={key.langauge} showButton={true} />
-        })
-      }
-      <Text />
-      <Visible />
-      <Calculator calcValue={5} />
+      {head}
+      {age}
+      {email}
+      {subject}
     </div>
-  )
+  );
+
+  return user;
 }
 
 export default App;

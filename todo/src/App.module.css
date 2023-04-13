@@ -1,3 +1,35 @@
+.addTask {
+  margin-bottom: 2px;
+  padding: 2px;
+}
+
+.task {
+  border: 2px solid black;
+  padding: 2px;
+}
+
+.noTask {}
+
+.nonCompletedTask {
+  background-color: red;
+}
+
+.completedTask {
+  background-color: green;
+}
+
+.buttonX {
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
 }
@@ -36,12 +68,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-
-.underAge {
-  background-color: red;
-}
-
-.overAge {
-  background-color: green;
 }
